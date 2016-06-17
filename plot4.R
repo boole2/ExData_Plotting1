@@ -26,7 +26,7 @@ dt_twoday <- dt_household %>% filter( date_time >=  as.POSIXct("2007-02-01 00:00
 head(dt_twoday)
 tail(dt_twoday)
 
-png(file = "plot4.png")
+png(file = "plot42.png")
 par(mfcol = c(2,2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
 
 with(dt_twoday, plot(date_time, Global_active_power,
@@ -47,7 +47,12 @@ legend( "topright", inset=.0001 , c( "Sub_metering_1","Sub_metering_2","Sub_mete
         lty=c(1,1), 
         text.font=6,
         col= c("black", "blue","red"),
-        cex =0.6)
+        cex =0.6,
+        bty = "n")
+
+
+
+
 with(dt_twoday, plot(date_time, Voltage,
                      main = "", 
                      xlab ="datetime",
